@@ -1,16 +1,13 @@
+import requests
 import json
 import os
-import requests
 
 def lambda_handler(event, context):
     webhook_url = os.environ.get("SLACK_WEBHOOK_URL")
-    message = {"text": "Hello, world!"}
+    headers = {"Content-type": "application/json"}
+    data = {"text": "Hello, World!"}
 
-    response = requests.post(
-        webhook_url,
-        data=json.dumps(message),
-        headers={"Content-Type": "application/json"}
-    )
+    response = requests.post(webhook_url, headers=headers, data=json.dumps(data))
 
     return {
         "statusCode": response.status_code,
