@@ -30,7 +30,7 @@ def fetch_weather():
             f"📅 {date_str} の天気情報（{area_name}）\n"
             f"🌤 今日の天気: {weather_today}\n"
             f"{pop_text.strip()}\n"
-            f"📝 概況:\n{overview_text}"
+            f"📝 概況:\n{overview_text}\n"
         )
         return message
 
