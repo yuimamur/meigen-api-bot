@@ -60,7 +60,7 @@ def send_to_discord(message, webhook_url):
 
 # AWS Lambdaのエントリーポイント関数
 def lambda_handler(event, context):
-    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")  # 環境変数からWebhook URLを取得
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
     weather_message = fetch_weather()
     send_to_discord(weather_message, webhook_url)
     return {
