@@ -5,5 +5,3 @@ RUN pip install requests
 
 # アプリケーションファイルをコピー
 COPY app.py ${LAMBDA_TASK_ROOT}
-
-CMD [ "app.lambda_handler" ]
