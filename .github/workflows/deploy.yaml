@@ -42,7 +42,7 @@ jobs:
 
     - name: Invoke Lambda Function
       run: |
-      aws lambda invoke \
-        --function-name meigen-lambda-bot \
-        --payload '{}' \
+        aws lambda invoke \
+          --function-name meigen-lambda-bot \
+          --payload '{}' \
       response.json
