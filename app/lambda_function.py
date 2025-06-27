@@ -3,7 +3,7 @@
 # datetime: 現在の日付を取得する標準ライブラリ
 import requests
 from datetime import datetime
-
+import os
 # 気象庁のAPIから天気情報を取得してDiscord向けに整形する関数
 def fetch_weather():
     try:
