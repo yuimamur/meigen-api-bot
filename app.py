@@ -8,8 +8,8 @@ def fetch_weather():
         overview_url = 'https://www.jma.go.jp/bosai/forecast/data/overview_forecast/140000.json'
         detail_url = 'https://www.jma.go.jp/bosai/forecast/data/forecast/140000.json'
 
-        overview = requests.get(overview_url).json()
-        detail = requests.get(detail_url).json()
+        overview = requests.get(overview_url, timeout=5).json()
+        detail = requests.get(detail_url, timeout=5).json()
 
         area_name = detail[0]['timeSeries'][0]['areas'][0]['area']['name']
         date_str = datetime.now().strftime('%Y-%m-%d')
@@ -41,7 +41,7 @@ def fetch_weather():
 def send_to_discord(message, webhook_url):
     try:
         data = {"content": message}
-        response = requests.post(webhook_url, json=data)
+        response = requests.post(webhook_url, json=data, timeout=5)
         if response.status_code != 204:
             raise Exception(f"Discord通知失敗: {response.status_code} - {response.text}")
     except Exception as e:
