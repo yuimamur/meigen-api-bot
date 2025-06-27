@@ -18,7 +18,7 @@ def fetch_weather():
         pops_series = detail[0]['timeSeries'][1]
         pop_times = pops_series['timeDefines']
         pops = pops_series['areas'][0]['pops']
-        pop_text = "☔ 降水：\n"
+        pop_text = "☔ 降水A：\n"
         for time, pop in zip(pop_times, pops):
             hour_str = time[11:16]
             pop_value = pop if pop else "---"
