@@ -35,7 +35,7 @@ def fetch_weather():
         return message
 
     except Exception as e:
-        return f"[エラー] 天気情報の取得に失敗しました: {str(e)}"
+        return f"[エラー] 天気情報の取得失敗しました: {str(e)}"
 
 # Discordにメッセージを送信する関数
 def send_to_discord(message, webhook_url):
