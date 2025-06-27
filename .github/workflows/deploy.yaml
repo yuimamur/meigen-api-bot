@@ -43,8 +43,5 @@ jobs:
 
     - name: Invoke Lambda Function
       run: |
-        - name: Invoke Lambda Function
-          run: |
-            aws lambda invoke --function-name meigen-lambda-bot --payload '{}' --cli-binary-format raw-in-base64-out response.json
-
+        aws lambda invoke --function-name $FUNCTION_NAME --payload '{}' --cli-binary-format raw-in-base64-out response.json
 
