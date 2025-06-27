@@ -3,7 +3,7 @@ import json
 import os
 
 def lambda_handler(event, context):
-    webhook_url = os.environ.get("SLACK_WEBHOOK_URL")
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
     headers = {"Content-type": "application/json"}
     data = {"text": "Hello, World!"}
 
