@@ -1,12 +1,10 @@
-FROM public.ecr.aws/lambda/python:3.10
+FROM public.ecr.aws/lambda/python:3.12
 
-# 依存パッケージをインストール
-COPY requirements.txt ./
-RUN pip3 install -r requirements.txt --target "${LAMBDA_TASK_ROOT}"
+# requestsライブラリをインストール
+RUN pip install requests
 
-# Lambdaのハンドラを追加
-COPY app/* ${LAMBDA_TASK_ROOT}/
+# Lambda実行用コードをコピー
+COPY lambda_function.py .
 
-# ハンドラの名前を指定（ファイル名.関数名）
+# Lambdaのエントリポイントを指定
 CMD ["lambda_function.lambda_handler"]
-
